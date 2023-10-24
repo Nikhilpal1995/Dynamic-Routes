@@ -8,7 +8,7 @@
     router.post('/add-expense', expenseController.createExpense);
 
     // Get all expenses
-    router.get('/get-expenses', expenseController.getAllExpenses);
+    router.get('/getexpenses', expenseController.getAllExpenses);
 
     // Get a specific expense by ID
     router.get('/get-expenses/:id', expenseController.getExpenseById);
