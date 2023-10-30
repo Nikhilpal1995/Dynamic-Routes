@@ -8,22 +8,22 @@ const sequelize = require("./util/database");
 const Product = require("./models/product");
 const User = require("./models/user");
 const Cart = require('./models/cart');
-const cartItem = require('./models/cart-item');
+const CartItem = require('./models/cart-item');
 //const Expense = require("./models/expense");
 
-const cors = require("cors");
+//const cors = require("cors");
 
 const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-app.use(cors());
+//app.use(cors());
 
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
-const userRoutes = require("./routes/user");
-const CartItem = require("./models/cart-item");
+//const userRoutes = require("./routes/user");
+//const CartItem = require("./models/cart-item");
 //const expenseRoutes = require("./routes/expense")
 
 app.use(bodyParser.json({ extended: false }));
@@ -39,7 +39,7 @@ app.use((req, res, next) => {
 
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
-app.use('/user', userRoutes);
+//app.use('/user', userRoutes);
 //app.use('/expense', expenseRoutes);
 
 app.use((err, req, res, next) => {
@@ -76,7 +76,7 @@ sequelize
   })
   .then(user => {
     if(!user) {
-      return User.create({ name: 'Max', email: 'test@test1.com', phonenumber: '9899775',description: 'Simple Description' });
+      return User.create({ name: 'Max3', email: 'test@test5.com'});
     }
     return user;
   })
